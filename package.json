@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "crawler": "^1.4.0"
+    "crawler": "^1.4.0",
+    "node-html-parser": "^6.1.5"
   }
 }

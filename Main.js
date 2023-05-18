@@ -1,5 +1,10 @@
-const domain = "https://www.gamemeca.com/ranking.php" // GameMeka 도메인
+
 const Crawler = require('crawler');
+const htmlparser = require('node-html-parser')
+
+
+
+const domain = "https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=101" // 네이버뉴스 도메인
 
 const c = new Crawler({
     maxConnections: 10,
@@ -8,20 +13,18 @@ const c = new Crawler({
         if (error) {
             console.log(error);
         } else {
-            const $ = res.$;
-            // $ is Cheerio by default
-            //a lean implementation of core jQuery designed specifically for the server
-            console.log($('title').text());
+            const body = res.body;
+            const html = body.toString()
+            const parsed_html = html.search()
+
+            console.log();
         }
         done();
     }
 });
 
-// Queue just one URL, with default callback
-c.queue(domain);
+c.queue(domain)
 
-console.log("Y")
-console.log("Y")
-console.log("Y")
-console.log("Y")
-console.log("This is Practice")
+
+
+//class="sh_text"
